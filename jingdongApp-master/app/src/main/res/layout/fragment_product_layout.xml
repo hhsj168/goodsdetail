@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/c12"
+             android:orientation="vertical">
+
+    <com.yju.app.widget.dampscrollview.ScrollViewWrapper
+        android:id="@+id/scrollViewWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:wrapper_padding="93">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.yju.app.widget.dampscrollview.PageOneScrollView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <include layout="@layout/include_detail_pageone"/>
+
+            </com.yju.app.widget.dampscrollview.PageOneScrollView>
+
+
+            <com.yju.app.widget.dampscrollview.PageTwoView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tab_1"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:background="#A29920"
+                            android:gravity="center"
+                            android:text="详情"/>
+
+                        <TextView
+                            android:id="@+id/tab_2"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:background="#A29920"
+                            android:gravity="center"
+                            android:text="规格"/>
+                    </LinearLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.yju.app.widget.dampscrollview.TopElasticScrollView
+                            android:id="@+id/elastic_scrollview_web"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.yju.app.widget.dampscrollview.FixWebView
+                                    android:id="@+id/web"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"></com.yju.app.widget.dampscrollview.FixWebView>
+                            </LinearLayout>
+                        </com.yju.app.widget.dampscrollview.TopElasticScrollView>
+
+                        <com.yju.app.widget.dampscrollview.TopElasticScrollView
+                            android:visibility="gone"
+                            android:id="@+id/elastic_scrollview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF">
+
+                            <include layout="@layout/include_detail_pagetwo"/>
+                        </com.yju.app.widget.dampscrollview.TopElasticScrollView>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </com.yju.app.widget.dampscrollview.PageTwoView>
+
+        </LinearLayout>
+    </com.yju.app.widget.dampscrollview.ScrollViewWrapper>
+
+</FrameLayout>
