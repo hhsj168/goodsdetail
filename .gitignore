@@ -31,8 +31,7 @@ proguard/
 
 build/
 
-app/build/
-Library/build/
-screen/build/
+/build/
+
 
 
